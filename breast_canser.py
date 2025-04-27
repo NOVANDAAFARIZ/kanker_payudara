@@ -141,9 +141,9 @@ elif st.session_state.page == "Prediksi":
                                             , Reginol_Node_Positive, Survival_Months  ]])
         
         if cancer_diagnosis_prediction[0] == 0:
-            cancer_diagnosis = 'Kemungkinan Hidup 50%'
+            cancer_diagnosis = 'Kemungkinan Hidup 60%'
         else:
-            cancer_diagnosis = 'Kemungkinan Mati 50%'
+            cancer_diagnosis = 'Kemungkinan Mati 60%'
 
     st.success(cancer_diagnosis)
 
