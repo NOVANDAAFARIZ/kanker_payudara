@@ -120,7 +120,6 @@ if "page" not in st.session_state:
 
 # Navigasi antara halaman
 if st.session_state.page == "Home":
-    <div style="color: black; font-size: 16px;">
     st.title("Selamat Datang di Aplikasi Prediksi Kanker Payudara!")
     st.write("""
         Aplikasi ini dirancang untuk membantu Anda dalam memprediksi penyakit kanker payudara berdasarkan berbagai faktor kesehatan.
