@@ -91,15 +91,20 @@ if "page" not in st.session_state:
 # Navigasi antara halaman
 if st.session_state.page == "Home":
     st.title("Selamat Datang di Aplikasi Prediksi Kanker Payudara!")
-    st.write("""
+
+    st.markdown("""
+    <div style="color: black; font-size: 16px;">
         Aplikasi ini dirancang untuk membantu Anda dalam memprediksi penyakit kanker payudara berdasarkan berbagai faktor kesehatan.
         
-        **Fitur Utama:**
-        - Input data kesehatan seperti umur, ukuran tumor, dan grade tumor.
-        - Prediksi penyakit kanker payudara menggunakan model machine learning yang andal.
+        <br>**Fitur Utama:**
+        <ul>
+            <li>Input data kesehatan seperti umur, ukuran tumor, dan grade tumor.</li>
+            <li>Prediksi penyakit kanker payudara menggunakan model machine learning yang andal.</li>
+        </ul>
         
         Silakan klik tombol di bawah ini untuk memulai prediksi Anda!
-    """)
+    </div>
+    """, unsafe_allow_html=True)
 
     # Tombol untuk navigasi ke halaman prediksi
     if st.button("Mulai Prediksi"):
