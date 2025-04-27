@@ -100,7 +100,7 @@ st.markdown("""
 
     .stSelectbox div[data-baseweb="option"] {
         color: #ffffff !important;
-        background-color: #444444 !important;
+        background-color: #ffffff !important;
         padding: 10px !important;
         font-size: 18px !important;
     }
