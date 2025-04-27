@@ -28,7 +28,7 @@ st.markdown("""
     }
 
     h1 {
-        color: #004b8d;
+        color: #333333;
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
