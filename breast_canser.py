@@ -18,7 +18,7 @@ st.markdown("""
     }
 
     .stApp {
-        background-color: #333333;
+        background-color: #ffffff;
         padding: 3rem;
         border-radius: 15px;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -28,7 +28,7 @@ st.markdown("""
     }
 
     h1 {
-        color: #333333;
+        color: #ffffff;
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
@@ -36,7 +36,7 @@ st.markdown("""
 
     label, .stTextInput label, .stNumberInput label, .stSelectbox label {
         font-weight: 600;
-        color: #333333;
+        color: #ffffff;
         font-size: 1.05rem;
         margin-bottom: 0.3rem;
         display: inline-block;
