@@ -12,7 +12,7 @@ st.markdown("""
     <style>
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(to right, #eaf4ff, #ffffff);
+        background: linear-gradient(to right, #ffffff, #eaf4ff);
         margin: 0;
         padding: 0;
     }
