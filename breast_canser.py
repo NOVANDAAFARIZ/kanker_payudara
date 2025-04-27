@@ -74,7 +74,8 @@ st.markdown("""
     }
 
     /* Kotak input */
-    .stTextInput>div>div>input {
+    .stTextInput>div>div>input,
+    .stNumberInput>div>div>input {
         border: 2px solid #007bff;
         border-radius: 6px;
         padding: 10px;
@@ -87,31 +88,30 @@ st.markdown("""
         color: #212529;
     }
 
-    /* Selectbox */
-    .stSelectbox div[data-baseweb="select"] * {
-        color: #ffffff !important;
-        font-size: 18px !important;
-        font-family: 'Arial', sans-serif !important;
+    /* Selectbox utama */
+    .stSelectbox div[data-baseweb="select"] {
+        background-color: #ffffff !important; /* Dropdown putih */
+        color: #000000 !important; /* Teks dropdown hitam */
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
     }
 
-    .stSelectbox div[data-baseweb="popover"] {
-        background-color: #ffffff !important;
-    }
-
+    /* Warna tulisan di dalam pilihan dropdown */
     .stSelectbox div[data-baseweb="option"] {
-        color: #ffffff !important;
-        background-color: #ffffff !important;
-        padding: 10px !important;
-        font-size: 18px !important;
+        background-color: #ffffff !important; /* Background putih */
+        color: #000000 !important; /* Teks hitam */
+        font-size: 16px;
+        padding: 10px;
     }
 
+    /* Saat opsi di-hover */
     .stSelectbox div[data-baseweb="option"]:hover {
-        background-color: #ffffff !important;
+        background-color: #e6f0ff !important; /* Biru muda saat hover */
+        color: #000000 !important;
     }
-
     </style>
 """, unsafe_allow_html=True)
-
 # Inisialisasi session state untuk melacak halaman
 if "page" not in st.session_state:
     st.session_state.page = "Home"
