@@ -12,28 +12,26 @@ st.markdown("""
     <style>
     /* Mengatur tampilan utama */
     .stApp {
-        background-color: #f8f9fa;
+        background-color: #f8f9fa; /* Warna putih dengan sedikit abu-abu agar tidak terlalu mencolok */
         padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         width: 100vw;
         height: 100vh;
         margin: 0;
-        overflow: auto;
+        overflow: hidden;
     }
 
-    /* Kontainer utama dengan frame */
+    /* Kontainer utama */
     .block-container {
-        background-color: #ffffff;
-        padding: 3rem;
-        max-width: 900px;
-        margin: 2rem auto;
-        border: 2px solid #dee2e6; /* Menambahkan border sebagai frame */
-        border-radius: 15px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        padding: 2rem;
+        max-width: 800px;
+        margin: auto;
     }
 
     /* Header */
     h1, h2, h3, h4, h5, h6 {
-        color: #212529;
+        color: #212529; /* Warna hitam pekat */
         text-align: center;
         font-size: 26px;
         font-weight: bold;
@@ -56,7 +54,7 @@ st.markdown("""
 
     /* Gaya tombol */
     .stButton>button {
-        background-color: #007bff;
+        background-color: #007bff; /* Warna biru cerah */
         color: white;
         font-size: 18px;
         font-weight: bold;
@@ -68,8 +66,9 @@ st.markdown("""
         box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
     }
 
+    /* Efek hover tombol */
     .stButton>button:hover {
-        background-color: #0056b3;
+        background-color: #0056b3; /* Warna biru lebih gelap saat hover */
         transform: scale(1.05);
     }
 
@@ -87,31 +86,33 @@ st.markdown("""
         color: #212529;
     }
 
-    /* Selectbox */
+            /* Gaya utama Selectbox */
     .stSelectbox div[data-baseweb="select"] * {
-        color: #ffffff !important;
+        color: #ffffff !important; /* Warna teks putih */
         font-size: 18px !important;
         font-family: 'Arial', sans-serif !important;
     }
 
+    /* Gaya untuk daftar dropdown */
     .stSelectbox div[data-baseweb="popover"] {
-        background-color: #ffffff !important;
+        background-color: #333333 !important; /* Latar belakang dropdown */
     }
 
+    /* Gaya untuk setiap opsi dalam dropdown */
     .stSelectbox div[data-baseweb="option"] {
-        color: #ffffff !important;
-        background-color: #ffffff !important;
+        color: #ffffff !important; /* Warna teks putih untuk opsi */
+        background-color: #444444 !important; /* Latar belakang opsi */
         padding: 10px !important;
         font-size: 18px !important;
     }
 
+    /* Gaya hover pada opsi dropdown */
     .stSelectbox div[data-baseweb="option"]:hover {
-        background-color: #ffffff !important;
+        background-color: #0056b3 !important; /* Warna biru saat hover */
     }
 
     </style>
 """, unsafe_allow_html=True)
-
 # Inisialisasi session state untuk melacak halaman
 if "page" not in st.session_state:
     st.session_state.page = "Home"
