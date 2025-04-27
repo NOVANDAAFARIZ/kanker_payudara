@@ -10,78 +10,108 @@ model = joblib.load('random_search.sav')
 # Tambahkan CSS untuk mempercantik tampilan
 st.markdown("""
     <style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(to right, #eaf4ff, #ffffff);
-        margin: 0;
-        padding: 0;
-    }
-
+    /* Mengatur tampilan utama */
     .stApp {
-        background-color: #ffffff;
-        padding: 3rem;
-        border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        max-width: 850px;
-        margin: 3rem auto;
-        border: 1px solid #dde6f1;
+        background-color: #f8f9fa; /* Warna putih dengan sedikit abu-abu agar tidak terlalu mencolok */
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
     }
 
-    h1 {
-        color: #333333;
+    /* Kontainer utama */
+    .block-container {
+        padding: 2rem;
+        max-width: 800px;
+        margin: auto;
+    }
+
+    /* Header */
+    h1, h2, h3, h4, h5, h6 {
+        color: #212529; /* Warna hitam pekat */
         text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    label, .stTextInput label, .stNumberInput label, .stSelectbox label {
-        font-weight: 600;
-        color: #333333;
-        font-size: 1.05rem;
-        margin-bottom: 0.3rem;
-        display: inline-block;
-    }
-
-    input[type="text"], input[type="number"], select, .stTextInput input, .stNumberInput input, .stSelectbox select {
-        width: 100%;
-        padding: 10px 14px;
-        margin: 8px 0 20px 0;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        box-sizing: border-box;
-        transition: all 0.3s ease;
-    }
-
-    input:focus, select:focus {
-        border-color: #0066cc;
-        box-shadow: 0 0 8px rgba(0, 102, 204, 0.2);
-        outline: none;
-    }
-
-    .stButton>button {
-        background-color: #004b8d;
-        color: white;
-        font-size: 16px;
+        font-size: 26px;
         font-weight: bold;
-        padding: 12px 30px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Label teks */
+    label {
+        font-weight: bold;
+        color: #333333;
+        font-size: 18px;
+    }
+
+    /* Teks utama */
+    body, p, div, span {
+        color: #212529;
+        font-size: 18px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Gaya tombol */
+    .stButton>button {
+        background-color: #007bff; /* Warna biru cerah */
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px 24px;
         border: none;
         border-radius: 8px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
     }
 
+    /* Efek hover tombol */
     .stButton>button:hover {
-        background-color: #003366;
+        background-color: #0056b3; /* Warna biru lebih gelap saat hover */
+        transform: scale(1.05);
     }
 
-    .footer {
-        text-align: center;
-        margin-top: 40px;
-        font-size: 14px;
-        color: #888;
+    /* Kotak input */
+    .stTextInput>div>div>input {
+        border: 2px solid #007bff;
+        border-radius: 6px;
+        padding: 10px;
+        font-size: 16px;
     }
-</style>
+
+    /* Checkbox & Radio button */
+    .stCheckbox, .stRadio {
+        font-size: 18px;
+        color: #212529;
+    }
+
+            /* Gaya utama Selectbox */
+    .stSelectbox div[data-baseweb="select"] * {
+        color: #ffffff !important; /* Warna teks putih */
+        font-size: 18px !important;
+        font-family: 'Arial', sans-serif !important;
+    }
+
+    /* Gaya untuk daftar dropdown */
+    .stSelectbox div[data-baseweb="popover"] {
+        background-color: #333333 !important; /* Latar belakang dropdown */
+    }
+
+    /* Gaya untuk setiap opsi dalam dropdown */
+    .stSelectbox div[data-baseweb="option"] {
+        color: #ffffff !important; /* Warna teks putih untuk opsi */
+        background-color: #444444 !important; /* Latar belakang opsi */
+        padding: 10px !important;
+        font-size: 18px !important;
+    }
+
+    /* Gaya hover pada opsi dropdown */
+    .stSelectbox div[data-baseweb="option"]:hover {
+        background-color: #0056b3 !important; /* Warna biru saat hover */
+    }
+
+    </style>
 """, unsafe_allow_html=True)
 
 # Inisialisasi session state untuk melacak halaman
@@ -90,21 +120,17 @@ if "page" not in st.session_state:
 
 # Navigasi antara halaman
 if st.session_state.page == "Home":
-    st.title("Selamat Datang di Aplikasi Prediksi Kanker Payudara!")
-
-    st.markdown("""
     <div style="color: black; font-size: 16px;">
+    st.title("Selamat Datang di Aplikasi Prediksi Kanker Payudara!")
+    st.write("""
         Aplikasi ini dirancang untuk membantu Anda dalam memprediksi penyakit kanker payudara berdasarkan berbagai faktor kesehatan.
         
-        <br>**Fitur Utama:**
-        <ul>
-            <li>Input data kesehatan seperti umur, ukuran tumor, dan grade tumor.</li>
-            <li>Prediksi penyakit kanker payudara menggunakan model machine learning yang andal.</li>
-        </ul>
+        **Fitur Utama:**
+        - Input data kesehatan seperti umur, ukuran tumor, dan grade tumor.
+        - Prediksi penyakit kanker payudara menggunakan model machine learning yang andal.
         
         Silakan klik tombol di bawah ini untuk memulai prediksi Anda!
-    </div>
-    """, unsafe_allow_html=True)
+    """)
 
     # Tombol untuk navigasi ke halaman prediksi
     if st.button("Mulai Prediksi"):
