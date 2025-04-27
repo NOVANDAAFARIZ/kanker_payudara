@@ -80,19 +80,6 @@ st.markdown("""
         font-size: 16px;
     }
 
-    /* Checkbox & Radio button */
-    .stCheckbox, .stRadio {
-        font-size: 18px;
-        color: #212529;
-    }
-
-            /* Gaya utama Selectbox */
-    .stSelectbox div[data-baseweb="select"] * {
-        color: #ffffff !important; /* Warna teks putih */
-        font-size: 18px !important;
-        font-family: 'Arial', sans-serif !important;
-    }
-
     </style>
 """, unsafe_allow_html=True)
 # Inisialisasi session state untuk melacak halaman
