@@ -106,7 +106,7 @@ st.markdown("""
     }
 
     .stSelectbox div[data-baseweb="option"]:hover {
-        background-color: #0056b3 !important;
+        background-color: #ffffff !important;
     }
 
     </style>
