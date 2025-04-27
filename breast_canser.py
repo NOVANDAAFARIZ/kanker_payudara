@@ -12,7 +12,7 @@ st.markdown("""
     <style>
     /* Mengatur tampilan utama */
     .stApp {
-        background-color: #f8f9fa; /* Warna putih dengan sedikit abu-abu agar tidak terlalu mencolok */
+        background-color: #ffffff; /* Warna putih */
         padding: 2rem;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -27,6 +27,7 @@ st.markdown("""
         padding: 2rem;
         max-width: 800px;
         margin: auto;
+        background-color: #ffffff; /* Warna putih */
     }
 
     /* Header */
@@ -110,6 +111,16 @@ st.markdown("""
     /* Gaya hover pada opsi dropdown */
     .stSelectbox div[data-baseweb="option"]:hover {
         background-color: #0056b3 !important; /* Warna biru saat hover */
+    }
+
+    /* Menghilangkan background hitam pada radio button */
+    div[role="radiogroup"] {
+        background-color: white !important;
+    }
+
+    /* Menyesuaikan warna radio button */
+    div[role="radiogroup"] label {
+        color: #212529 !important;
     }
 
     </style>
