@@ -88,10 +88,12 @@ st.markdown("""
     }
 
     /* Selectbox */
-    .stSelectbox div[data-baseweb="select"] * {
-        color: #ffffff !important;
-        font-size: 18px !important;
-        font-family: 'Arial', sans-serif !important;
+    .stSelectbox div[data-baseweb="select"] {
+        background-color: #ffffff !important; /* Latar belakang putih */
+        color: #212529 !important; /* Warna teks */
+        border: 2px solid #007bff; /* Border */
+        border-radius: 6px; /* Radius border */
+        padding: 10px; /* Padding */
     }
 
     .stSelectbox div[data-baseweb="popover"] {
@@ -99,14 +101,14 @@ st.markdown("""
     }
 
     .stSelectbox div[data-baseweb="option"] {
-        color: #ffffff !important;
-        background-color: #ffffff !important;
+        color: #212529 !important; /* Warna teks */
+        background-color: #ffffff !important; /* Latar belakang putih */
         padding: 10px !important;
         font-size: 18px !important;
     }
 
     .stSelectbox div[data-baseweb="option"]:hover {
-        background-color: #ffffff !important;
+        background-color: #f1f1f1 !important; /* Warna latar belakang saat hover */
     }
 
     </style>
