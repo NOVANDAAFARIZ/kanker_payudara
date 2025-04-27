@@ -10,16 +10,31 @@ model = joblib.load('random_search.sav')
 # Tambahkan CSS untuk mempercantik tampilan
 st.markdown("""
     <style>
+    /* Frame untuk seluruh aplikasi */
+    .main-frame {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        z-index: -1;
+    }
+    
     /* Mengatur tampilan utama */
     .stApp {
-        background-color: #f8f9fa; /* Warna putih dengan sedikit abu-abu agar tidak terlalu mencolok */
+        background-color: #ffffff; /* Warna putih */
         padding: 2rem;
         border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        width: 100vw;
-        height: 100vh;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        width: calc(100vw - 40px);
+        height: calc(100vh - 40px);
         margin: 0;
-        overflow: hidden;
+        overflow: auto;
+        position: relative;
+        border: 15px solid #ffffff; /* Bingkai putih */
+        outline: 1px solid #e0e0e0; /* Garis tipis sebagai aksen */
     }
 
     /* Kontainer utama */
@@ -27,15 +42,18 @@ st.markdown("""
         padding: 2rem;
         max-width: 800px;
         margin: auto;
+        background-color: #ffffff;
+        border-radius: 8px;
     }
 
     /* Header */
     h1, h2, h3, h4, h5, h6 {
-        color: #212529; /* Warna hitam pekat */
+        color: #212529;
         text-align: center;
         font-size: 26px;
         font-weight: bold;
         font-family: 'Arial', sans-serif;
+        margin-bottom: 1.5rem;
     }
 
     /* Label teks */
@@ -43,6 +61,8 @@ st.markdown("""
         font-weight: bold;
         color: #333333;
         font-size: 18px;
+        margin-bottom: 0.5rem;
+        display: block;
     }
 
     /* Teks utama */
@@ -50,11 +70,12 @@ st.markdown("""
         color: #212529;
         font-size: 18px;
         font-family: 'Arial', sans-serif;
+        line-height: 1.6;
     }
 
     /* Gaya tombol */
     .stButton>button {
-        background-color: #007bff; /* Warna biru cerah */
+        background-color: #007bff;
         color: white;
         font-size: 18px;
         font-weight: bold;
@@ -63,55 +84,94 @@ st.markdown("""
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: block;
+        margin: 1rem auto;
+        width: fit-content;
     }
 
     /* Efek hover tombol */
     .stButton>button:hover {
-        background-color: #0056b3; /* Warna biru lebih gelap saat hover */
-        transform: scale(1.05);
+        background-color: #0056b3;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
     /* Kotak input */
     .stTextInput>div>div>input {
-        border: 2px solid #007bff;
-        border-radius: 6px;
-        padding: 10px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 12px;
         font-size: 16px;
+        background-color: #ffffff;
+        transition: border-color 0.3s ease;
+    }
+
+    .stTextInput>div>div>input:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
     }
 
     /* Checkbox & Radio button */
     .stCheckbox, .stRadio {
         font-size: 18px;
         color: #212529;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        margin: 5px 0;
     }
 
-            /* Gaya utama Selectbox */
+    /* Gaya utama Selectbox */
+    .stSelectbox div[data-baseweb="select"] {
+        border: 2px solid #e0e0e0 !important;
+        border-radius: 8px !important;
+    }
+
     .stSelectbox div[data-baseweb="select"] * {
-        color: #ffffff !important; /* Warna teks putih */
+        color: #212529 !important;
         font-size: 18px !important;
         font-family: 'Arial', sans-serif !important;
     }
 
     /* Gaya untuk daftar dropdown */
     .stSelectbox div[data-baseweb="popover"] {
-        background-color: #333333 !important; /* Latar belakang dropdown */
+        background-color: #ffffff !important;
+        border: 1px solid #e0e0e0 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
     }
 
     /* Gaya untuk setiap opsi dalam dropdown */
     .stSelectbox div[data-baseweb="option"] {
-        color: #ffffff !important; /* Warna teks putih untuk opsi */
-        background-color: #444444 !important; /* Latar belakang opsi */
-        padding: 10px !important;
+        color: #212529 !important;
+        background-color: #ffffff !important;
+        padding: 12px !important;
         font-size: 18px !important;
     }
 
     /* Gaya hover pada opsi dropdown */
     .stSelectbox div[data-baseweb="option"]:hover {
-        background-color: #0056b3 !important; /* Warna biru saat hover */
+        background-color: #f8f9fa !important;
     }
 
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .stApp {
+            width: 100vw;
+            height: 100vh;
+            padding: 1rem;
+            border: none;
+            border-radius: 0;
+        }
+        
+        .block-container {
+            padding: 1rem;
+        }
+    }
     </style>
+    
+    <div class="main-frame"></div>
 """, unsafe_allow_html=True)
 # Inisialisasi session state untuk melacak halaman
 if "page" not in st.session_state:
