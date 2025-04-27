@@ -100,8 +100,8 @@ st.markdown("""
 
     /* Gaya untuk setiap opsi dalam dropdown */
     .stSelectbox div[data-baseweb="option"] {
-        color: #ffffff !important; /* Warna teks putih untuk opsi */
-        background-color: #333333 !important; /* Latar belakang opsi */
+        color: #333333 !important; /* Warna teks putih untuk opsi */
+        background-color: #ffffff !important; /* Latar belakang opsi */
         padding: 10px !important;
         font-size: 18px !important;
     }
