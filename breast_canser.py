@@ -93,24 +93,6 @@ st.markdown("""
         font-family: 'Arial', sans-serif !important;
     }
 
-    /* Gaya untuk daftar dropdown */
-    .stSelectbox div[data-baseweb="popover"] {
-        background-color: #333333 !important; /* Latar belakang dropdown */
-    }
-
-    /* Gaya untuk setiap opsi dalam dropdown */
-    .stSelectbox div[data-baseweb="option"] {
-        color: #ffffff !important; /* Warna teks putih untuk opsi */
-        background-color: #444444 !important; /* Latar belakang opsi */
-        padding: 10px !important;
-        font-size: 18px !important;
-    }
-
-    /* Gaya hover pada opsi dropdown */
-    .stSelectbox div[data-baseweb="option"]:hover {
-        background-color: #0056b3 !important; /* Warna biru saat hover */
-    }
-
     </style>
 """, unsafe_allow_html=True)
 # Inisialisasi session state untuk melacak halaman
