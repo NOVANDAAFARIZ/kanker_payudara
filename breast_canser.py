@@ -74,10 +74,11 @@ st.markdown("""
 
     /* Kotak input */
     .stTextInput>div>div>input {
-        border: 2px solid #007bff;
+        border: 2px solid #007bff; /* Warna biru untuk border */
         border-radius: 6px;
         padding: 10px;
         font-size: 16px;
+        background-color: #ffffff; /* Mengubah latar belakang menjadi putih */
     }
 
     /* Checkbox & Radio button */
@@ -86,7 +87,7 @@ st.markdown("""
         color: #212529;
     }
 
-            /* Gaya utama Selectbox */
+    /* Gaya utama Selectbox */
     .stSelectbox div[data-baseweb="select"] * {
         color: #ffffff !important; /* Warna teks putih */
         font-size: 18px !important;
@@ -100,7 +101,7 @@ st.markdown("""
 
     /* Gaya untuk setiap opsi dalam dropdown */
     .stSelectbox div[data-baseweb="option"] {
-        color: #333333 !important; /* Warna teks putih untuk opsi */
+        color: #ffffff !important; /* Warna teks putih untuk opsi */
         background-color: #444444 !important; /* Latar belakang opsi */
         padding: 10px !important;
         font-size: 18px !important;
