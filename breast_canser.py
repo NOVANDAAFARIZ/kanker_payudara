@@ -88,7 +88,7 @@ st.markdown("""
 
             /* Gaya utama Selectbox */
     .stSelectbox div[data-baseweb="select"] * {
-        color: #333333 !important; /* Warna teks putih */
+        color: #ffffff !important; /* Warna teks putih */
         font-size: 18px !important;
         font-family: 'Arial', sans-serif !important;
     }
@@ -101,7 +101,7 @@ st.markdown("""
     /* Gaya untuk setiap opsi dalam dropdown */
     .stSelectbox div[data-baseweb="option"] {
         color: #ffffff !important; /* Warna teks putih untuk opsi */
-        background-color: #444444 !important; /* Latar belakang opsi */
+        background-color: #333333 !important; /* Latar belakang opsi */
         padding: 10px !important;
         font-size: 18px !important;
     }
