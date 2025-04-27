@@ -30,9 +30,37 @@ st.markdown("""
         background-color: #ffffff; /* Warna putih */
     }
 
+    /* Radio button container */
+    .stRadio > div {
+        background-color: white !important;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    /* Radio button option */
+    .stRadio [role="radiogroup"] {
+        background-color: white !important;
+    }
+
+    /* Radio button label */
+    .stRadio label {
+        color: #212529 !important;
+        font-weight: normal;
+    }
+
+    /* Radio button circle */
+    .stRadio [role="radio"] {
+        border-color: #007bff !important;
+    }
+
+    /* Radio button selected */
+    .stRadio [role="radio"][aria-checked="true"] {
+        background-color: #007bff !important;
+    }
+
     /* Header */
     h1, h2, h3, h4, h5, h6 {
-        color: #212529; /* Warna hitam pekat */
+        color: #212529;
         text-align: center;
         font-size: 26px;
         font-weight: bold;
@@ -55,7 +83,7 @@ st.markdown("""
 
     /* Gaya tombol */
     .stButton>button {
-        background-color: #007bff; /* Warna biru cerah */
+        background-color: #007bff;
         color: white;
         font-size: 18px;
         font-weight: bold;
@@ -69,17 +97,17 @@ st.markdown("""
 
     /* Efek hover tombol */
     .stButton>button:hover {
-        background-color: #0056b3; /* Warna biru lebih gelap saat hover */
+        background-color: #0056b3;
         transform: scale(1.05);
     }
 
     /* Kotak input */
     .stTextInput>div>div>input {
-        border: 2px solid #007bff; /* Warna biru untuk border */
+        border: 2px solid #007bff;
         border-radius: 6px;
         padding: 10px;
         font-size: 16px;
-        background-color: #ffffff; /* Mengubah latar belakang menjadi putih */
+        background-color: #ffffff;
     }
 
     /* Checkbox & Radio button */
@@ -90,37 +118,27 @@ st.markdown("""
 
     /* Gaya utama Selectbox */
     .stSelectbox div[data-baseweb="select"] * {
-        color: #ffffff !important; /* Warna teks putih */
+        color: #ffffff !important;
         font-size: 18px !important;
         font-family: 'Arial', sans-serif !important;
     }
 
     /* Gaya untuk daftar dropdown */
     .stSelectbox div[data-baseweb="popover"] {
-        background-color: #333333 !important; /* Latar belakang dropdown */
+        background-color: #333333 !important;
     }
 
     /* Gaya untuk setiap opsi dalam dropdown */
     .stSelectbox div[data-baseweb="option"] {
-        color: white !important; /* Warna teks putih untuk opsi */
-        background-color: #444444 !important; /* Latar belakang opsi */
+        color: white !important;
+        background-color: #444444 !important;
         padding: 10px !important;
         font-size: 18px !important;
     }
 
     /* Gaya hover pada opsi dropdown */
     .stSelectbox div[data-baseweb="option"]:hover {
-        background-color: #0056b3 !important; /* Warna biru saat hover */
-    }
-
-    /* Menghilangkan background hitam pada radio button */
-    div[role="radiogroup"] {
-        background-color: white !important;
-    }
-
-    /* Menyesuaikan warna radio button */
-    div[role="radiogroup"] label {
-        color: #212529 !important;
+        background-color: #0056b3 !important;
     }
 
     </style>
