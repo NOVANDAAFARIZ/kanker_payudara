@@ -95,7 +95,7 @@ st.markdown("""
     }
 
     .stSelectbox div[data-baseweb="popover"] {
-        background-color: #333333 !important;
+        background-color: #ffffff !important;
     }
 
     .stSelectbox div[data-baseweb="option"] {
