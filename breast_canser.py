@@ -28,7 +28,7 @@ st.markdown("""
     }
 
     h1 {
-        color: #ffffff;
+        color: #333333;
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
@@ -36,7 +36,7 @@ st.markdown("""
 
     label, .stTextInput label, .stNumberInput label, .stSelectbox label {
         font-weight: 600;
-        color: #ffffff;
+        color: #333333;
         font-size: 1.05rem;
         margin-bottom: 0.3rem;
         display: inline-block;
