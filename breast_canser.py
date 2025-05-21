@@ -170,9 +170,9 @@ elif st.session_state.page == "Prediksi":
                                             , Reginol_Node_Positive, Survival_Months  ]])
         
         if cancer_diagnosis_prediction[0] == 0:
-            cancer_diagnosis = 'Tidak Terkena'
+            cancer_diagnosis = ' Model Memprediksi Pasien Tidak Terkena Kanker Payudara'
         else:
-            cancer_diagnosis = 'Terkena'
+            cancer_diagnosis = ' Model Memprediksi Pasien Terkena Kanker Payudara'
 
     st.success(cancer_diagnosis)
 
